@@ -1,38 +1,6 @@
 // global value that holds info about the current hand.
 let currentGame = null;
 
-/*
- * ========================================================
- *                  DOM ELEMENTS
- * ========================================================
- */
-
-// create game button
-const createGameBtn = document.createElement('button');
-
-// getting DIV elements
-const gameControl = document.querySelector('#game-controls-container');
-
-const gameContainer = document.querySelector('#game-container');
-const playerOneName = document.createElement('h3');
-gameContainer.appendChild(playerOneName);
-
-const cardContainer1 = document.createElement('div');
-cardContainer1.classList.add('card-container');
-gameContainer.appendChild(cardContainer1);
-
-const playerTwoName = document.createElement('h3');
-gameContainer.appendChild(playerTwoName);
-
-const cardContainer2 = document.createElement('div');
-cardContainer2.classList.add('card-container');
-gameContainer.appendChild(cardContainer2);
-
-const scoreContainer = document.createElement('div');
-gameContainer.appendChild(scoreContainer);
-
-const loginContainer = document.querySelector('#login-signup');
-
 //
 //           DOM Functions
 // .....................................
@@ -46,6 +14,12 @@ const createInput = (title, id) => {
   container.appendChild(inputTitle);
   container.appendChild(inputField);
   return container;
+};
+
+const createDOM = (div, attribute) => {
+  const element = document.createElement(div);
+  element.setAttribute('id', attribute);
+  return element;
 };
 
 const createCard = (cardInfo) => {
@@ -65,6 +39,36 @@ const createCard = (cardInfo) => {
 
   return card;
 };
+
+/*
+ * ========================================================
+ *                  DOM ELEMENTS
+ * ========================================================
+ */
+
+// create game button
+const createGameBtn = document.createElement('button');
+
+// getting DIV elements
+const gameControl = document.querySelector('#game-controls-container');
+
+const gameContainer = document.querySelector('#game-container');
+const playerOneName = document.createElement('h3');
+gameContainer.appendChild(playerOneName);
+
+const cardContainer1 = createDOM('div', 'card-container');
+gameContainer.appendChild(cardContainer1);
+
+const playerTwoName = document.createElement('h3');
+gameContainer.appendChild(playerTwoName);
+
+const cardContainer2 = createDOM('div', 'card-container');
+gameContainer.appendChild(cardContainer2);
+
+const scoreContainer = document.createElement('div');
+gameContainer.appendChild(scoreContainer);
+
+const loginContainer = document.querySelector('#login-signup');
 
 /*
  * ========================================================
