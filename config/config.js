@@ -1,8 +1,8 @@
 module.exports = {
   development: {
-    username: '<YOUR_USER_NAME>',
+    username: 'Eric',
     password: null,
-    database: 'cards_development',
+    database: 'cards_post',
     host: '127.0.0.1',
     dialect: 'postgres',
   },
